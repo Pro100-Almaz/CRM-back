@@ -4,6 +4,7 @@ import idmpartners.kz.crm.back.dto.ActionDto;
 import idmpartners.kz.crm.back.enums.ModuleType;
 import idmpartners.kz.crm.back.enums.ResourceType;
 import idmpartners.kz.crm.back.interfaces.CrmModule;
+import idmpartners.kz.crm.back.modules.ModuleRegistry;
 import idmpartners.kz.crm.back.services.PermissionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -26,7 +27,7 @@ public class ActionsController {
     private PermissionService permissionService;
 
     @GetMapping("/modules/{moduleType}")
-    public ResponseEntity<ActionsResponse> getModuleActions(
+    public /*ResponseEntity<ActionsResponse>*/ String getModuleActions(
             @PathVariable ModuleType moduleType,
             @RequestParam(required = false) ResourceType resourceType,
             @RequestParam(required = false) UUID resourceId,
@@ -75,3 +76,4 @@ public class ActionsController {
         return ResponseEntity.ok(userActions);
     }
 }
+
