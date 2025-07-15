@@ -51,7 +51,6 @@ public class PermissionService {
             return false;
         }
 
-        // Apply scope-based filtering if target is provided
         if (target != null) {
             return hasResourceScopeAccess(userId, resourceType, target);
         }
