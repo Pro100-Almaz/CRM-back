@@ -4,7 +4,6 @@ import idmpartners.kz.crm.back.classes.ActionDefinition;
 import idmpartners.kz.crm.back.dto.ActionDto;
 import idmpartners.kz.crm.back.enums.ResourceType;
 import idmpartners.kz.crm.back.interfaces.CrmModule;
-import idmpartners.kz.crm.back.modules.ModuleRegistry;
 import idmpartners.kz.crm.back.services.PermissionService;
 import jakarta.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +21,6 @@ public abstract class AbstractCrmModule implements CrmModule {
 
     @Autowired
     protected ModuleRegistry moduleRegistry;
-
 
     @PostConstruct
     public void registerModule() {
