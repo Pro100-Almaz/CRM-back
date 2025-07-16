@@ -1,8 +1,11 @@
 package idmpartners.kz.crm.back.enums;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 import java.util.List;
 
+@Getter
 public enum PermissionType {
     LEADS_CREATE(ResourceType.LEADS, ActionType.CREATE),
     LEADS_READ(ResourceType.LEADS, ActionType.READ),
@@ -85,8 +88,6 @@ public enum PermissionType {
         this.action = action;
     }
 
-    public ResourceType getResource() { return resource; }
-    public ActionType getAction() { return action; }
     public ModuleType getModule() { return resource.getModule(); }
 
     public String getPermissionKey() {
