@@ -63,6 +63,11 @@ public class SalesModule extends AbstractCrmModule {
     }
 
     @Override
+    protected void doInitialize() {
+
+    }
+
+    @Override
     protected boolean isActionEnabled(ActionDefinition action, UUID userId, UUID resourceId) {
         if (action.getActionType() == ActionType.CONVERT && resourceId != null) {
             return !isLeadConverted(resourceId);
@@ -77,10 +82,5 @@ public class SalesModule extends AbstractCrmModule {
     @Override
     public boolean isEnabled() {
         return true;
-    }
-
-    @Override
-    public void initialize() {
-        // Module initialization logic
     }
 }
