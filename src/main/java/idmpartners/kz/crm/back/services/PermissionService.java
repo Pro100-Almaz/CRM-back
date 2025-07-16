@@ -116,7 +116,7 @@ public class PermissionService {
 
     private boolean isPermissionMatch(PermissionType permission, ResourceType resourceType, ActionType actionType) {
         String permissionCode = permission.getPermissionKey();
-        String expectedCode = resourceType.getCode() + "_" + actionType.getCode();
+        String expectedCode = resourceType.getCode() + ":" + actionType.getCode();
         return permissionCode.equals(expectedCode);
     }
 

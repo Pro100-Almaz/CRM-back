@@ -1,7 +1,10 @@
 package idmpartners.kz.crm.back.enums;
 
+import lombok.Getter;
+
 import java.util.Arrays;
 
+@Getter
 public enum ActionType {
     CREATE("create", "Create"),
     READ("read", "View"),
@@ -25,9 +28,6 @@ public enum ActionType {
         this.code = code;
         this.displayName = displayName;
     }
-
-    public String getCode() { return code; }
-    public String getDisplayName() { return displayName; }
 
     public static ActionType fromCode(String code) {
         return Arrays.stream(values())
