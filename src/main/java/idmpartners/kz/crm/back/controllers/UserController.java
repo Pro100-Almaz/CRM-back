@@ -18,7 +18,7 @@ public class UserController {
     public ResponseEntity<?> createUser(@RequestBody UserCreateDto userCreateDto) {
         return new ResponseEntity<>(userService.createUser(userCreateDto), HttpStatus.OK);
     }
-    @PostMapping(value = "/login")
+    @PostMapping(value = "/signin")
     public UserTokenDto signIn(@RequestBody UserLoginDto userLoginDto) {
         return userService.authenticate(userLoginDto);
     }
