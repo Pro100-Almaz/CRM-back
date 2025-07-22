@@ -36,5 +36,6 @@ public class UserUtils {
                     .lastName(jwt.getClaimAsString("family_name"))
                     .build();
         }
+        return null;
     }
 }

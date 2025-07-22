@@ -6,7 +6,7 @@ services:
       - 'RABBITMQ_DEFAULT_USER=myuser'
     ports:
       - '5672'
-  keycloak_db:
+  postgres:
     image: postgres:17
     container_name: keycloak_postgres
     environment:
@@ -38,6 +38,9 @@ services:
       - postgres
     networks:
       - keycloak_net
+
+
+
 
 volumes:
   postgres_data:

@@ -41,6 +41,7 @@ public class KeyCloakClient {
 
     public UserRepresentation createUser(UserCreateDto userCreateDto) {
         UserRepresentation newUser = new UserRepresentation();
+        newUser.setId(userCreateDto.getId());
         newUser.setEmail(userCreateDto.getEmail());
         newUser.setEmailVerified(true);
         newUser.setUsername(userCreateDto.getUsername());
@@ -65,8 +66,6 @@ public class KeyCloakClient {
         }
         List<UserRepresentation> userList = keycloak.realm(realm).users().search(userCreateDto.getUsername());
         return userList.get(0);
-
-
     }
     public UserTokenDto signIn(UserLoginDto userLoginDto){
         String tokenEndpoint = url + "/realms/" + realm + "/protocol/openid-connect/token";
